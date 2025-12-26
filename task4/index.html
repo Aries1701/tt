@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container{
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2{
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .img-row img{
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button{
+            padding: 10px 16px;
+            cursor: pointer;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover{
+            background: #0056b3;
+        }
+
+        .list-box{
+            height: 150px;
+            border: 1px solid #ccc;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 300px;
+        }
+
+        input, textarea {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .flex-demo {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .box {
+            width: 100px;
+            height: 80px;
+            background: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 6px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demo</h1>
+        <h2>1. IMG</h2>
+        <div class="img-row">
+            <img src="https://px-web-images8.pixpa.com/YX-6pP7cCub-RKay6XG3gTejGObaSU_GNNfqRFlU-FA/rs:fit:1200:0/q:80/czM6Ly9waXhwYS10ZXN0L2NvbS9sYXJnZS83NjU2OTgvNzY1Njk4LTE3MTIxMjc1MjgtcnAyMDQwLWdlbmVyaWMtZWxpdGUtcGktY29udHJvbGxlci1waW5vdXQucG5n" alt="Placeholder Image 1">
+            <img src="http://share.opsy.st/6331d74b8f2dd-IMAGE+5+%281%29.png" alt="Placeholder Image 2">
+            <img src="https://hackster.imgix.net/uploads/attachments/1396743/rp2040_0MscTWuAMG.png?auto=compress%2Cformat&w=740&h=555&fit=max" alt="Placeholder Image 3">
+        </div>
+
+        <h2>2. Button onclick</h2>
+        <button id="alertBtn">Click me</button>
+
+        <h2>3. List scroll</h2>
+        <div class="list-box">
+            <ul>
+                <li>Item1</li>
+                <li>Item2</li>
+                <li>Item3</li>
+                <li>Item4</li>
+                <li>Item5</li>
+                <li>Item6</li>
+                <li>Item7</li>
+                <li>Item8</li>
+            </ul>
+        </div>
+
+        <h2>4. Input</h2>
+        <div class="form-group">
+            <input type="text" id="textInput" placeholder="Nhập chữ thường / HOA"/>
+            <input type="password" placeholder="Mật khẩu"/>
+            <input type="email" placeholder="Email"/>
+        </div>
+
+        <h2>5. Textarea</h2>
+        <textarea id="message" rows="4" placeholder="Nhập nội dung ..."></textarea>
+
+        <h2>6. Flex layout</h2>
+        <div class="flex-demo">
+            <div class="box">Left</div>
+            <div class="box">Center</div>
+            <div class="box">Right</div>
+        </div>
+    </div>
+
+    <script>
+        // Button onclick
+        document.getElementById('alertBtn').addEventListener("click", () => {
+            alert('Bạn vừa bấm nút');
+        });
+
+        // input event
+        const textInput = document.getElementById('textInput');
+        textInput.addEventListener("input", (e) => {
+            console.log("Text", e.target.value);
+        });
+
+        textInput.addEventListener("focus", () => {
+            console.log("Input focused");
+        });
+
+        textInput.addEventListener("blur", () => {
+            console.log("Input blurred");
+        });
+
+        // textarea
+        document.getElementById('message').addEventListener("input", (e) => {
+            console.log("Textarea", e.target.value);
+        });
+    </script>
+    
+</body>
+</html>
