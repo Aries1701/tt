@@ -1,0 +1,18 @@
+.results-list {
+  position: absolute;
+  background: white;
+  width: 350px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  /* margin-top: 65px; */
+
+  z-index: 999;
+}
+
+@media (max-width: 400px) {
+  .results-list {
+    width: 100%;
+  }
+}

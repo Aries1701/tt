@@ -1,0 +1,62 @@
+/* Wrapper */
+.input-wrapper {
+    position: relative;
+    width: 320px;
+    margin: 20px auto 5px;
+}
+
+/* Input */
+.input-wrapper input {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 999px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #111;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease;
+}
+
+/* Focus effect */
+.input-wrapper input:focus {
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.6),
+                0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Placeholder */
+.input-wrapper input::placeholder {
+    color: #999;
+}
+
+/* Search Icon */
+#search-icon {
+    position: absolute;
+    top: 60%;
+    left: 16px;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Dropdown (để App render kết quả) */
+.results-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    background-color: #141414;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+@media (max-width: 600px) {
+    .input-wrapper {
+        width: 100%;
+    }
+}

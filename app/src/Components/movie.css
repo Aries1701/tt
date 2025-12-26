@@ -1,0 +1,36 @@
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 phim 1 hàng */
+    gap: 15px; 
+    padding: 20px;
+    background-color: #111;
+}
+
+
+.movie-card {
+    text-align: center;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.movie-card img:hover {
+    transform: scale(1.05);
+}
+
+.movie-title {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

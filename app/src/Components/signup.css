@@ -1,0 +1,74 @@
+/* Container */
+.signup-container {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+    url("../assets/login.jpg") center / cover no-repeat;
+}
+
+/* Card */
+.signup-card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 32px 24px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.signup-card h1 {
+  color: white;
+  font-size: 26px;
+  margin-bottom: 24px;
+}
+
+/* Input */
+.signup-card input {
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  padding: 14px;
+  margin-bottom: 16px;
+  color: white;
+  font-size: 16px; /* FIX iOS zoom */
+}
+
+.signup-card input::placeholder {
+  color: #aaa;
+}
+
+/* Button */
+.signup-card button {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Text */
+.signup-card p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.signup-card span {
+  color: white;
+  cursor: pointer;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .signup-card {
+    padding: 48px;
+  }
+}

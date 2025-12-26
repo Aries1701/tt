@@ -1,0 +1,123 @@
+/* ===== PAGE ===== */
+.reset-page {
+    min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background:
+    /* linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), */
+    url("../assets/login.jpg") center / cover no-repeat;
+}
+
+/* Overlay */
+.reset-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.85)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+}
+
+/* Wrapper */
+.reset-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+/* ===== BOX ===== */
+.reset-box {
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 36px 28px 30px;
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* Title */
+.reset-box h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Description */
+.reset-desc {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin-bottom: 20px;
+}
+
+/* Input */
+.reset-box input {
+    width: 100%;
+    height: 48px;
+    margin-bottom: 16px;
+    padding: 0 14px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+}
+
+.reset-box input::placeholder {
+    color: #9b9b9b;
+}
+
+.reset-box input:focus {
+    background-color: #454545;
+}
+
+/* Button */
+.reset-box button {
+    width: 100%;
+    height: 48px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e50914;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reset-box button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Footer */
+.reset-footer {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+.reset-footer span {
+    color: #fff;
+    cursor: pointer;
+}
+
+.reset-footer span:hover {
+    text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .reset-box {
+        padding: 30px 20px;
+    }
+
+    .reset-box h2 {
+        font-size: 26px;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iFix</title>
+  <!-- Thư viện Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="dark">
+
+  <!-- SEARCH BAR -->
+  <div class="search-bar">
+    <div class="icon">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="Tìm kiếm ở đây">
+  </div>
+
+  <!-- FILTER CHIPS -->
+  <div class="chips">
+    <div class="dropdown-filter" id="filterDropdown">
+      <div class="dropdown-toggle" id="filterToggle">
+        Bộ lọc <span class="arrow">▼</span>
+      </div>
+
+      <div class="dropdown-content" id="filterContent">
+        <label><input type="checkbox" id="high-rating" /> Đánh Giá Cao (≥4.5)</label>
+        <label><input type="checkbox" id="nearby" /> Gần Bạn (Bán kính 2km)</label>
+        <label><input type="checkbox" id="motorbike" /> Sửa Xe Máy</label>
+        <label><input type="checkbox" id="car" /> Sửa Ô Tô</label>
+        <label><input type="checkbox" id="bicycle" /> Sửa Xe Đạp Điện</label>
+      </div>
+    </div>
+
+    <div class="dropdown-filter" id="priceDropdown">
+      <div class="dropdown-toggle" id="priceToggle">
+        <span id="priceLabel">Tất cả</span>
+        <span class="arrow">▼</span>
+      </div>
+
+      <div class="dropdown-content price-content">
+        <div class="price-option active" data-value="">
+          Tất cả
+        </div>
+        <div class="price-option" data-value="low-high">
+          Thấp đến Cao
+        </div>
+        <div class="price-option" data-value="high-low">
+          Cao đến Thấp
+        </div>
+        <div class="price-option" data-value="100000-500000">
+          100.000đ - 500.000đ
+        </div>
+        <div class="price-option" data-value="500000-1000000">
+          500.000đ - 1tr đ
+        </div>
+        <div class="price-option" data-value="1000000-2000000">
+          1tr đ - 2tr đ
+        </div>
+        <div class="price-option" data-value="over2m">
+          Trên 2tr đ
+        </div>
+      </div>
+    </div>
+
+
+    <button id="filter-btn">Lọc</button>
+  </div>
+
+
+
+  <!-- MAP -->
+  <div id="map"></div>
+
+  <!-- BOTTOM SHEET -->
+  <div class="gm-bottom-sheet mini" id="sheet">
+    <div class="sheet-header" id="sheetHeader">
+      <div class="drag-handle"></div>
+      <h3>Danh sách cửa hàng</h3>
+    </div>
+
+    <div class="sheet-content">
+      <ul id="location-list"></ul>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,15 @@
+.notfound-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000; /* optional: để ảnh nổi bật */
+}
+
+.notfound-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* khiến ảnh tràn toàn màn hình */
+}

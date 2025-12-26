@@ -1,0 +1,27 @@
+.App {
+    background-color: #111;
+    min-height: 100vh;
+    color: #fff;
+}
+
+
+.search-bar-container {
+  margin-top: 15px;
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+}
+
+
+.search {
+ 
+    padding: 24px 0 30px;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+  .search-bar-container {
+    width: 80%;
+  }
+}
+
