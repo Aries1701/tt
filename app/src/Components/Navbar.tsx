@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { firebaseAuth } from "../utils/firebase-config";
+import { auth } from "../utils/firebase";
 import type { User } from "firebase/auth";
 
 import "./navbar.css";
@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const unsub = onAuthStateChanged(
-      firebaseAuth,
+      auth,
       (currentUser: User | null) => {
         setUser(currentUser);
       }
@@ -25,7 +25,7 @@ const Navbar: React.FC = () => {
 
   const handleLogout = async (): Promise<void> => {
     try {
-      await signOut(firebaseAuth);
+      await signOut(auth);
       navigate("/login");
     } finally {
       setOpen(false);

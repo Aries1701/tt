@@ -1,0 +1,16 @@
+.category-menu {
+    display: flex;
+    overflow-x: auto;
+    padding: 8px 12px;
+}
+
+.category-item {
+    min-width: 80px;
+    text-align: center;
+    margin-right: 12px;
+    font-size: 12px;
+}
+
+.category-item .icon {
+    font-size: 12px;
+}

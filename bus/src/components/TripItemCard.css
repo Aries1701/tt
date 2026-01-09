@@ -1,0 +1,163 @@
+.trip-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  font-family: sans-serif;
+  max-width: 450px;
+}
+
+/* Header */
+.trip-header {
+  display: flex;
+  justify-content: space-between;
+  color: #707070;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Route Box */
+.trip-route-container {
+  background-color: #f7f9fa;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.trip-route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.station-name {
+  font-weight: 600;
+  font-size: 15px;
+  flex: 1;
+  text-align: center;
+  color: #333;
+}
+
+.route-line {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.route-line .line {
+  height: 1px;
+  border-top: 1px dashed #4a6cf7;
+  flex: 1;
+}
+
+.route-line .dot {
+  width: 6px;
+  height: 6px;
+  background-color: #4a6cf7;
+  border-radius: 50%;
+}
+
+/* Provider */
+.trip-provider {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.provider-left {
+  display: flex;
+  gap: 12px;
+}
+
+.provider-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: contain;
+  border: 1px solid #eee;
+}
+
+.policy-link {
+  color: #2474E5;
+  font-size: 13px;
+  margin: 4px 0 0 0;
+}
+
+.rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.star {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.favorite-icon {
+  width: 20px;
+  cursor: pointer;
+}
+
+.vehicle-type {
+  font-size: 13px;
+  color: #666;
+  margin: 4px 0 0 0;
+  text-align: right;
+}
+
+/* Footer & Dashed Line */
+.trip-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px dashed #e0e0e0; /* Đường kẻ đứt giữa thân và chân vé */
+  position: relative;
+}
+
+/* đục lỗ bên cạnh vé */
+.trip-footer::before, .trip-footer::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f2f5; /* màu nền trang web */
+    border-radius: 50%;
+}
+.trip-footer::before { left: -26px; }
+.trip-footer::after { right: -26px; }
+
+.price-value {
+  color: #2474E5;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.seats-left {
+  font-size: 13px;
+  color: #555;
+  margin: 4px 0 0 0;
+}
+
+.btn-next {
+  background-color: #EEF3FF;
+  color: #2474E5;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-next:hover {
+  background-color: #2474E5;
+  color: #fff;
+}

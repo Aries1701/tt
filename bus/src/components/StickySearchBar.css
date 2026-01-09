@@ -1,0 +1,33 @@
+.sticky-search-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #f5f6fa;
+  padding: 10px 12px;
+}
+
+.sticky-search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 999px;
+  padding: 15px 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sticky-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin: 0 8px;
+}
+
+.icon {
+  color: #999;
+  font-size: 16px;
+}
+
+.icon.right {
+  color: #ff7a00;
+}

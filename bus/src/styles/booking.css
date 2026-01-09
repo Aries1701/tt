@@ -1,0 +1,68 @@
+.booking-page {
+  padding-bottom: 90px;
+}
+
+.booking-header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.card {
+  background: #fff;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.seat-row button {
+  width: 36px;
+  height: 36px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.booking-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
+
+.booking-footer button {
+  background: #ff7a00;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+}

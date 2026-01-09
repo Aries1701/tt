@@ -1,0 +1,263 @@
+/* Container phủ toàn màn hình */
+.filter-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end; /* Hiển thị từ dưới lên như mobile sheet */
+  z-index: 1000;
+}
+
+/* Cửa sổ Modal */
+.filter-modal {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+/* Tiêu đề */
+.filter-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.filter-header img {
+  width: 24px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.filter-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Nội dung cuộn */
+.filter-content {
+  padding: 16px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #f8f8f8; /* Màu nền nhạt phía sau các group */
+}
+
+.filter-content h4 {
+  margin: 16px 0 12px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Lưới thời gian (2 cột) */
+.time-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.time-box {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+
+.time-box.active {
+  border-color: #4361ee;
+  background-color: #f0f4ff;
+}
+
+.time-box span {
+  font-size: 13px;
+  color: #666;
+}
+
+.time-box small {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Khoảng giá */
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.range-wrapper {
+  position: relative;
+  height: 40px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+
+.range-wrapper input[type="range"] {
+  position: absolute;
+  width: calc(100% - 24px);
+  pointer-events: none;
+  appearance: none;
+  background: none;
+}
+
+.range-wrapper input[type="range"]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #4361ee;
+  pointer-events: auto;
+  appearance: none;
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Danh sách chọn (Nhà xe / Loại xe) */
+.select-item {
+  background: #fff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.select-item:first-of-type { border-radius: 8px 8px 0 0; }
+.select-item:last-of-type { border-radius: 0 0 8px 8px; border-bottom: none; }
+
+/* Icon bus giả lập từ ảnh (nếu bạn có icon bus hãy thêm vào thẻ img) */
+.select-item::before {
+  content: "🚌"; /* Bạn có thể thay bằng img icon bus trong mã nguồn */
+  margin-right: 12px;
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+.select-item span {
+  flex: 1;
+  font-size: 15px;
+}
+
+.select-item img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Footer nút bấm */
+.filter-footer {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.filter-footer button {
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-footer button.clear {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.filter-footer button.apply {
+  background: #4361ee;
+  color: #fff;
+}
+
+/* ===== PRICE ===== */
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-limit {
+  font-size: 12px;
+  color: #888;
+}
+
+.price-slider {
+  margin-top: 8px;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* slider base */
+.range-wrapper {
+  position: relative;
+  height: 24px;
+}
+
+.range-wrapper input[type="range"] {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+  pointer-events: none;
+  appearance: none;
+}
+
+.range-wrapper input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #4a6cf7;
+  border-radius: 50%;
+  pointer-events: all;
+}
+
+/* ===== OPERATORS ===== */
+.operator-list {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.operator-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 4px;
+}
+
+.operator-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.operator-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+}

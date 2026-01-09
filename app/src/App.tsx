@@ -6,19 +6,20 @@ import {
 } from "react-router-dom";
 import { useState } from "react";
 
-import Movie from "./Components/Movie";
-import MovieDetail from "./Components/MovieDetail";
-import Home from "./Components/Home";
-import Login from "./Components/Login";
-import Signup from "./Components/Signup";
-import Reset from "./Components/Reset";
-import Navbar from "./Components/Navbar";
-import NotFound from "./Components/NotFound";
+import Movie from "./components/Movie";
+import MovieDetail from "./components/MovieDetail";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import Reset from "./components/Reset";
+import Navbar from "./components/Navbar";
+import NotFound from "./components/NotFound";
 
-import { SearchBar } from "./Components/SearchBar";
-import { SearchResultsList } from "./Components/SearchResultsList";
+import { SearchBar } from "./components/SearchBar";
+import { SearchResultsList } from "./components/SearchResultsList";
 
 import "./App.css";
+import MovieList from "./components/MovieList";
 
 /* ===== Types ===== */
 interface SearchResultItem {
@@ -32,8 +33,11 @@ const Layout: React.FC = () => {
   const [results, setResults] = useState<SearchResultItem[]>([]);
   const location = useLocation();
 
-  // ✅ CHỈ hiện SearchBar ở trang Home
+  // ✅ Chỉ hiện SearchBar ở trang Home
   const isHomePage = location.pathname === "/";
+
+  // ✅ Lọc chỉ các item có title
+  const filteredResults = results.filter((item) => item.title);
 
   return (
     <div className="App">
@@ -43,8 +47,8 @@ const Layout: React.FC = () => {
         {isHomePage && (
           <div className="search-bar-container">
             <SearchBar setResults={setResults} />
-            {results.length > 0 && (
-              <SearchResultsList results={results} />
+            {filteredResults.length > 0 && (
+              <SearchResultsList results={filteredResults} />
             )}
           </div>
         )}
@@ -58,6 +62,7 @@ const Layout: React.FC = () => {
         <Route path="/movie" element={<Movie />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
         <Route path="/*" element={<NotFound />} />
+        <Route path="/list" element={<MovieList />} />
       </Routes>
     </div>
   );

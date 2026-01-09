@@ -1,0 +1,13 @@
+const products = [
+    {
+        id: 1, name: "Laptop", price: 999.99, inStock: true
+    },
+    {
+        id: 2, name: "Mouse", price: 29.99, inStock: false
+    },
+    {
+        id: 3, name: "Keyboard", price: 79.99, inStock: true
+    },
+];
+
+export default products;

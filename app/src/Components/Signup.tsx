@@ -6,7 +6,7 @@ import {
 } from "firebase/auth";
 import type { User } from "firebase/auth";
 
-import { firebaseAuth } from "../utils/firebase-config";
+import { auth } from "../utils/firebase";
 import "./signup.css";
 
 const Signup: React.FC = () => {
@@ -17,7 +17,7 @@ const Signup: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(firebaseAuth, (User: User | null) => {
+    const unsub = onAuthStateChanged(auth, (User: User | null) => {
       if (User) navigate("/");
     });
     return unsub();
@@ -32,8 +32,9 @@ const Signup: React.FC = () => {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(firebaseAuth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
     } catch (error) {
+      console.log(error)
       alert("Signup failed");
     }
   };

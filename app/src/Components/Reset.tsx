@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
-import { firebaseAuth } from "../utils/firebase-config";
-// import BackgroundImage from "../assets/BackgroundImage";
-import "./reset.css"; // dùng chung style login
+import { auth } from "../utils/firebase";
+import "./reset.css";
 import { FirebaseError } from "firebase/app";
 
 const Reset: React.FC = () => {
@@ -25,7 +24,7 @@ const Reset: React.FC = () => {
     setLoading(true);
 
     try {
-      await sendPasswordResetEmail(firebaseAuth, email);
+      await sendPasswordResetEmail(auth, email);
       alert("Please check your Email!");
       navigate("/login");
     } catch (error) {

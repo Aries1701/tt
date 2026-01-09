@@ -122,3 +122,68 @@
 .back-icon:hover {
     background: rgba(255, 255, 255, 0.25);
 }
+
+
+/* ===== Skeleton Base ===== */
+.skeleton {
+  background: #0f0f0f;
+}
+
+.skeleton-box,
+.skeleton-line,
+.skeleton-btn {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 25%,
+    #3a3a3a 37%,
+    #2a2a2a 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* ===== Poster ===== */
+.poster.skeleton-box {
+  width: 300px;
+  height: 450px;
+}
+
+/* ===== Text ===== */
+.skeleton-line {
+  height: 18px;
+  margin-bottom: 12px;
+}
+
+.skeleton-line.title {
+  width: 70%;
+  height: 32px;
+}
+
+.skeleton-line.meta {
+  width: 50%;
+}
+
+.skeleton-line.overview {
+  width: 100%;
+}
+
+.skeleton-line.overview.short {
+  width: 80%;
+}
+
+/* ===== Buttons ===== */
+.skeleton-btn {
+  width: 140px;
+  height: 42px;
+  margin-right: 12px;
+}

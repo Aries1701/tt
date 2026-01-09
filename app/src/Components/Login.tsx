@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
-import { firebaseAuth } from "../utils/firebase-config";
+import { auth } from "../utils/firebase";
 import "./login.css";
 
 const Login = () => {
@@ -12,7 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(firebaseAuth, (currentUser: User | null) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser: User | null) => {
       if (currentUser) { navigate("/"); }
     });
 
@@ -25,7 +25,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      await signInWithEmailAndPassword(firebaseAuth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error: any) {
       alert("Email hoặc mật khẩu không đúng");
       console.log(error.code);
